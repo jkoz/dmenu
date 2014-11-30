@@ -8,8 +8,8 @@ static const char *font = "-*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*"; /* -fn op
 static const char *prompt = "» ";           /* -p  option; prompt to the elft of input field */
 static const char *normbgcolor = "#002b36"; /* -nb option; normal background                 */
 static const char *normfgcolor = "#839496"; /* -nf option; normal foreground                 */
-static const char *selbgcolor  = "#005577"; /* -sb option; selected background               */
-static const char *selfgcolor  = "#eeeeee"; /* -sf option; selected foreground               */
+static const char *selbgcolor  = "#073642"; /* -sb option; selected background               */
+static const char *selfgcolor  = "#cb4b16"; /* -sf option; selected foreground               */
 static const char *outbgcolor  = "#00ffff";
 static const char *outfgcolor  = "#000000";
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
