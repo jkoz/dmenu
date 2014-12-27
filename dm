@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-dmenu=('dmenu' '-i' '-l 10')
+dmenu=('dmenu' '-i' '-l 5')
 
 _usage() {
     printf "\nUsage:\n\tdmenu [options] <command> [command options]\n"
