@@ -43,7 +43,7 @@ _switch() {
 }
 
 _process() {
-    ps -ef h | ${dmenu[*]} | awk '{print $2}' | xargs kill -9 &>/dev/null
+    ps -eo pcpu,pid,user,args h | sort -k 1 -r | ${dmenu[*]} | awk '{print $2}' | xargs kill -9 &>/dev/null
 }
 
 _tags() {
@@ -61,13 +61,13 @@ _menu() {
 case "$1" in
     re|recursive) shift; _recursive $@;;
     fm|filemanager|filemgr) shift; _filemanager $@;;
-    fi|find) shift; dmenu+=("-p Find» "); _find $@;;
-    op|open) shift; dmenu+=("-p Open» "); _open $@;;
-    sw|switch) shift; dmenu+=("-p Switch» "); _switch;;
-    ps|process) shift; dmenu+=("-p Process» "); _process;;
-    tg|tags) shift; dmenu+=("-p Tags» "); [ $# -eq 0 ] && _usage || _tags $@;;
-    rn|run) shift; dmenu+=("-p Run» "); _run;;
-    mn|menu) shift; dmenu+=("-p Menu» "); _menu;;
+    fi|find) shift; dmenu+=("-p Find: "); _find $@;;
+    op|open) shift; dmenu+=("-p Open: "); _open $@;;
+    sw|switch) shift; dmenu+=("-p Switch: "); _switch;;
+    ps|process) shift; dmenu+=("-p Process: "); _process;;
+    tg|tags) shift; dmenu+=("-p Tags: "); [ $# -eq 0 ] && _usage || _tags $@;;
+    rn|run) shift; dmenu+=("-p Run: "); _run;;
+    mn|menu) shift; dmenu+=("-p Menu: "); _menu;;
     *) if [ $# -eq 0 ] ; then { while read -r line; do echo "$line"; done | ${dmenu}; } else _usage; fi ;;
 esac
 exit $?
